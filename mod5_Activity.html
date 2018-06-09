@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Writing Functions to Get Values from a Form</title>
+  </head>
+
+  <body>
+
+    <form id="name_address">
+      First Name: <input type="text" name="fname" id="fname"><br><br>
+      Last Name: <input type="text" name="lname" id="lname"><br><br>
+      Address: <input type="text" name="address" id="address"><br><br>
+      City: <input type="text" name="city" id="city"><br><br>
+      State: <input type="text" name="state" id="state"><br><br>
+    </form>
+
+    <button onclick="getInfo()">Get form data</button>
+
+    <p id="formData"></p>
+
+    <script type="text/javascript">
+      function getInfo() {
+        var x = document.getElementById("name_address");
+        var txt = "";
+
+        for (var i = 0; i < x.length; i++) {
+          txt = txt + x.elements[i].value + "<br>";
+        }
+        document.getElementById("formData").innerHTML = txt;
+        console.log(txt);
+      }
+    </script>
+
+  </body>
+</html>
